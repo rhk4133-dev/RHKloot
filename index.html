@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loot Offers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background: #ff9900;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e68a00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Welcome to LootHub</h1>
+    <p>
+      We share the best Amazon and Flipkart deals.<br>
+      Updated daily. Genuine offers only.
+    </p>
+    <button onclick="goToOffers()">Continue</button>
+  </div>
+
+  <script>
+    function goToOffers() {
+      window.location.href = "offers.html";
+    }
+  </script>
+
+</body>
+</html>
