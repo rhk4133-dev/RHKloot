@@ -2,49 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LootHub – Best Deals</title>
+  <title>LootHub – Deals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 15px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      background: #f2f3f5;
+      color: #222;
     }
-    .top {
+
+    .header {
+      background: #111;
+      color: white;
+      padding: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
     }
-    button {
-      padding: 8px 12px;
+
+    .header h1 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .header button {
+      background: #ff5722;
       border: none;
+      color: white;
+      padding: 8px 12px;
       border-radius: 6px;
       cursor: pointer;
-      background: #333;
-      color: white;
-      margin: 5px;
     }
+
     .filters {
-      text-align: center;
-      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      background: white;
     }
+
+    .filters button {
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      background: white;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .offers {
+      padding: 14px;
+    }
+
     .offer {
       background: white;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     }
+
+    .offer h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
     .price {
-      color: green;
-      font-weight: bold;
       font-size: 18px;
+      font-weight: 700;
+      color: #0a8f08;
     }
+
+    .platform {
+      font-size: 13px;
+      color: #666;
+      margin: 6px 0;
+    }
+
+    .offer a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #111;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
     .disclaimer {
       font-size: 12px;
-      color: #555;
-      margin-top: 20px;
+      color: #666;
       text-align: center;
+      padding: 16px;
     }
   </style>
 
@@ -58,28 +113,21 @@
 
 <body onload="loadOffers()">
 
-  <div class="top">
-    <h2>LootHub</h2>
+  <div class="header">
+    <h1>🔥 LootHub Deals</h1>
     <button onclick="logout()">Logout</button>
   </div>
 
-  <h1>🔥 Today’s Best Deals</h1>
-
-  <!-- FILTER BUTTONS -->
   <div class="filters">
     <button onclick="loadOffers('All')">All</button>
     <button onclick="loadOffers('Amazon')">Amazon</button>
     <button onclick="loadOffers('Flipkart')">Flipkart</button>
   </div>
 
-  <!-- OFFERS -->
-  <div id="offers"></div>
+  <div class="offers" id="offers"></div>
 
-  <!-- DISCLAIMER -->
   <div class="disclaimer">
-    Prices may change at any time.  
-    We are not responsible for price variations.  
-    This site may contain affiliate links.
+    Prices may change • Affiliate links may be used
   </div>
 
   <script src="script.js"></script>
