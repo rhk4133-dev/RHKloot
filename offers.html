@@ -1,49 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Today’s Loot Offers</title>
+  <title>LootHub – Best Deals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f7f7f7;
+      background: #f4f4f4;
+      padding: 15px;
     }
-    h1 {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #333;
+      color: white;
+      margin: 5px;
+    }
+    .filters {
       text-align: center;
+      margin: 15px 0;
     }
     .offer {
       background: white;
-      border-radius: 8px;
       padding: 15px;
       margin-bottom: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
     .price {
       color: green;
       font-weight: bold;
       font-size: 18px;
     }
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    button {
-      padding: 8px 14px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background: #333;
-      color: white;
+    .disclaimer {
+      font-size: 12px;
+      color: #555;
+      margin-top: 20px;
+      text-align: center;
     }
   </style>
 
-  <!-- PAGE PROTECTION -->
+  <!-- LOGIN PROTECTION -->
   <script>
     if (localStorage.getItem("loggedIn") !== "true") {
       window.location.href = "login.html";
@@ -53,19 +58,32 @@
 
 <body onload="loadOffers()">
 
-  <div class="top-bar">
+  <div class="top">
     <h2>LootHub</h2>
     <button onclick="logout()">Logout</button>
   </div>
 
   <h1>🔥 Today’s Best Deals</h1>
 
+  <!-- FILTER BUTTONS -->
+  <div class="filters">
+    <button onclick="loadOffers('All')">All</button>
+    <button onclick="loadOffers('Amazon')">Amazon</button>
+    <button onclick="loadOffers('Flipkart')">Flipkart</button>
+  </div>
+
+  <!-- OFFERS -->
   <div id="offers"></div>
 
-  <!-- OFFERS LOGIC -->
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    Prices may change at any time.  
+    We are not responsible for price variations.  
+    This site may contain affiliate links.
+  </div>
+
   <script src="script.js"></script>
 
-  <!-- LOGOUT LOGIC -->
   <script>
     function logout() {
       localStorage.removeItem("loggedIn");
