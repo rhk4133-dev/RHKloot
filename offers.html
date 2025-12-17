@@ -37,7 +37,24 @@
     }
   </style>
 </head>
+  <body>
+
+  <button onclick="logout()">Logout</button>
+
+  <h1>🔥 Today’s Best Deals</h1>
+
+  <!-- your offers here -->
+
+  <script>
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "index.html";
+    }
+  </script>
+
+  </body>
 <body>
+  
 
   <h1>🔥 Today’s Best Deals</h1>
 
