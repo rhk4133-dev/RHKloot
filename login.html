@@ -54,8 +54,8 @@
 
   <script>
     function fakeLogin() {
-      alert("Login successful (demo)");
-      window.location.href = "offers.html";
+  localStorage.setItem("loggedIn", "true");
+  window.location.href = "offers.html";
     }
   </script>
 
