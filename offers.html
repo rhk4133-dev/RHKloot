@@ -5,6 +5,11 @@
   <title>Today’s Loot Offers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    <script>
+  if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
     body {
       font-family: Arial, sans-serif;
       background: #ffffff;
