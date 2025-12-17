@@ -2,60 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Login – LootHub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 40px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      color: #222;
+      width: 100%;
+      max-width: 360px;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    h2 {
       text-align: center;
+      margin-bottom: 8px;
     }
-    .box {
-      background: #fff;
-      padding: 25px;
-      max-width: 350px;
-      margin: auto;
-      border-radius: 10px;
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 24px;
     }
+
     button {
       width: 100%;
-      padding: 12px;
-      margin-top: 12px;
-      font-size: 16px;
+      padding: 14px;
+      margin-bottom: 12px;
       border: none;
-      border-radius: 6px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
     }
+
     .google {
       background: #4285f4;
       color: white;
     }
+
     .mobile {
-      background: #333;
+      background: #111;
       color: white;
+    }
+
+    .note {
+      font-size: 12px;
+      text-align: center;
+      color: #888;
+      margin-top: 12px;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h2>Login</h2>
-    <p>Select a login method</p>
+  <div class="card">
+    <h2>Welcome Back</h2>
+    <p>Login to see today’s best deals</p>
 
-    <button class="google" onclick="fakeLogin()">
-      Login with Google
+    <button class="google" onclick="login()">
+      Continue with Google
     </button>
 
-    <button class="mobile" onclick="fakeLogin()">
-      Login with Mobile Number
+    <button class="mobile" onclick="login()">
+      Continue with Mobile
     </button>
+
+    <div class="note">
+      Demo login • No data stored
+    </div>
   </div>
 
   <script>
-    function fakeLogin() {
-  localStorage.setItem("loggedIn", "true");
-  window.location.href = "offers.html";
+    function login() {
+      localStorage.setItem("loggedIn", "true");
+      window.location.href = "offers.html";
     }
   </script>
 
